@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#outer{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    color: white;
+    flex-flow: row;
+    height: 100vh;
+}
+.box:nth-child(1){
+    background-color: lightgray;
+    padding: 40px;
+}
+.box:nth-child(2){
+    background-color: gray;
+    padding: 40px;
+}
+.box:nth-child(3){
+    background-color: darkgray;
+    padding: 40px;
+}

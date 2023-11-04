@@ -1,0 +1,304 @@
+@import '_variables.scss';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+input, button {
+	font-size: inherit;
+	font-family: inherit;
+}
+body, html {
+    
+	height: 100%;
+}
+body {
+    display: flex;
+    
+    margin:auto;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: Roboto, Arial, sans-serif;
+    // width: 60vw;
+    header{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid lightgray;
+        .start{
+            display: flex;
+        }
+        button{
+            display: flex;
+            color: black;
+            border: none;
+            background-color: white;
+            text-decoration: none;
+            align-items: center;
+            justify-content:center ;
+            margin: 10px;
+            cursor: pointer;
+            font-size: 16px;
+           
+
+        }
+        .logo{
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            
+            .fab{
+                color: red;
+            }
+            .name{
+               
+                font-weight: bold;
+
+            }
+            .pl{
+                color: grey;
+                font-size: 7px;
+                align-self: flex-start;
+                position: relative;
+                top: 5px;
+               
+            }
+            
+
+        }
+        .center{
+            display: flex;
+            align-items: center;
+            
+    
+            .search{
+                background-color: $background-color;
+                border:1px solid lightgray;
+                border-left:none;
+                width: 50px;
+                height: 40px;
+                margin: 0px;
+            }
+            #search{
+                height: 40px;
+                width: 400px;
+                border: 1px solid lightgray;
+                
+                }
+
+         }
+        .end{
+            display: flex;
+            
+            .login{
+                color: $login-color;
+                border: 1px solid $login-color;
+                padding:8px;
+                text-transform: uppercase;
+                font-weight: bold;
+                font-size: 12px;
+                display: flex;
+               
+                .far{
+                    font-size: 16px;
+                    padding-right: 10px;
+                }
+                div{
+                    
+                    align-self: center;
+                }
+            }
+        }
+    }   
+}
+#body{
+    display: grid;
+    grid-template-columns:repeat(5,1fr);
+    
+
+    #left-section{
+        grid-column: 1/2;
+        display: flex;
+        flex-direction: column;
+        
+        .login-info{
+            border-bottom: 1px solid lightgray;
+            margin-top: 14px;
+            padding-bottom: 14px;
+            padding-left: 10px;
+            
+            
+            p{
+                font-size: 13px;
+            }
+            .login{
+            display: flex;
+            background-color: white;
+            text-decoration: none;
+            align-items: center;
+            justify-content:center ;
+            cursor: pointer;
+            font-size: 16px;
+            color: $login-color;
+            border: 1px solid $login-color;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 12px;
+            padding: 8px;
+            margin-top: 14px;
+            .far{
+                padding-right: 10px;
+                font-size: 16px;
+            }
+            }
+        }
+        
+
+        
+        .link-group{
+            
+            border-bottom:1px solid lightgray ;
+           
+            
+            .header{
+                font-weight: bold;
+                font-size: 12px;
+                text-transform: uppercase;
+                color: grey;
+                margin-top: 14px;
+                margin-bottom: 14px;
+                padding-left: 10px;
+            }
+            
+           
+            ul {
+              list-style-type: none;
+             } 
+             li{
+                 padding: 10px;
+                 cursor: pointer;
+                 i{
+                     text-align: center;
+                     width: 20px;
+                     padding-right: 10px;
+                 }
+                 &:hover{
+                    background-color: $category-hover;
+                }
+             }
+        }
+
+    }
+    #main-section{
+        grid-column: 2/6;
+        background-color: $background-color;
+        
+        .buttons{
+            background-color: white;
+            display: flex;
+            flex-direction: row;
+            border-bottom:1px solid lightgray ;
+            .active{
+                color: white;
+                background-color: $header-button;
+            }
+            button{
+            display: flex;
+            background-color: $background-color;
+            color: black;
+            border: 1px solid lightgray;
+            border-radius: 15px;
+            text-decoration: none;
+            align-items: center;
+            justify-content:center ;
+            padding: 5px;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            padding-right: 10px;
+            padding-left: 10px;
+            }
+
+        }
+
+        .main-movie-section{
+        
+        padding: 20px;
+        display: grid;
+        grid-template-columns:repeat(4,1fr);
+        
+        grid-gap: 20px;
+        
+        .movie{
+            
+                    display: grid;
+					grid-template-columns: 1fr;
+					grid-template-rows: 190px 1fr;
+					grid-template-areas:
+						"frame frame"
+						"avatar info";
+                        @for $i from 1 through length($movie-colors) {
+                            &:nth-child(#{$i}) {
+                                .movie-frame {
+                                    background-color: nth($movie-colors, $i);
+                                }
+                            }
+                        }
+
+            .avatar{
+                grid-area: avatar;
+                background-color: gray;
+                height: 40px;
+                width: 40px;
+                border-radius: 50%;
+                
+            }
+
+            .movie-frame{
+                grid-area: frame;
+                height: 170px;
+                background-color: red;
+            }
+            .movie-info{
+                padding-left: 10px;
+                grid-area: info;
+                .title {
+                    font-weight: bold;
+                    margin-bottom: 8px;
+                }
+                .info {
+                    color: gray;
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 8px;
+                    .channel-name {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        &:nth-child(3){
+            border-bottom: 1px solid lightgray;
+            border-top: 1px solid lightgray;
+            .movie{
+
+              .movie-frame{
+                background-color: gray;
+            }
+         }
+        }
+
+
+        }
+        .header{
+                    grid-column: 1 / -1;
+					width: 100%;
+					margin-bottom: 4px;
+					font-size: 20px;
+            }
+
+    }
+}

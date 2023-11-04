@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100vh;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(12,auto);
+    height: 60%;
+    grid-gap: 5px;
+    
+    .orange{
+        background-color: orange;
+        border-radius: 10px;
+       
+        grid-column-end: span 6;
+        @media(max-width: 1024px)
+        {
+            grid-column-end: span 6;
+
+        } 
+        @media (max-width: 768px)
+        {
+            grid-column-end: span 12;
+            
+        }
+    }
+    .blue{
+        background-color: blue;
+        
+        border-radius: 10px;
+        grid-column-end: span 4;
+        @media(max-width: 1024px)
+        {
+            grid-column-end: span 12;
+         
+            
+
+        }
+        @media (max-width: 768px)
+        {
+            grid-column-end: span 12;
+           
+
+        }
+
+    }
+    .green{
+        background-color: green;
+        grid-column-end: span 12;
+       
+        border-radius: 10px;
+        @media(max-width: 1024px)
+        {
+            grid-column-end: span 12;
+
+        }
+        @media (max-width: 768px)
+        {
+            grid-column-end: span 12;
+           
+        }
+    }
+    .gray{
+        background-color: gray;
+       
+        border-radius: 10px;
+        grid-column-end: span 3;
+        @media(max-width: 1024px)
+        {
+            grid-column-end: span 6;
+            
+
+
+        }
+        @media (max-width: 768px)
+        {
+            grid-column-end: span 12;
+            
+        }
+    }
+}

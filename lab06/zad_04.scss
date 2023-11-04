@@ -1,0 +1,192 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: whitesmoke;  
+    position: relative;
+    
+    
+}
+nav{
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    padding: 15px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 1px 1px;
+    justify-content: left;
+
+    .logo{
+        
+        display: flex;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 30px;
+    }
+    ul{
+        list-style-type: none;
+        display: inline-flex;
+        margin-left: auto;
+    }
+    li{
+        margin-left: 50px;
+       
+    }
+
+}
+main {
+    margin: 50px 5%;
+    display: grid;
+    grid-template-columns: repeat(4 1fr);
+    grid-template-rows: 90px 90px 1fr 40px 90px 1fr 40px;
+    gap: 50px;
+    
+    
+    .button{
+        background-color: white; 
+        display: flex;
+        border-radius: 15px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 4px;
+        button{
+            background-color: darkblue;
+            color: white;
+            border-radius: 25px;
+            text-align: center;
+            font-size: 20px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            padding:15px;
+            margin: 0 1rem;
+            border: none;
+            width: 100%;
+
+        }
+    }
+
+    
+    .header-panel {
+        display: flex;
+        grid-column: 2/5;
+        border-radius: 10px;
+        background-color: white;
+        flex-direction: row;
+        align-items: center;
+        padding: 14px;
+        justify-content: space-between;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 4px;
+        .left{
+            .header{
+                font-weight: bold;
+                padding-bottom: 4px;
+            }
+        }
+        .right {
+            input {
+              height: 35px;
+              width: 300px;
+            }
+          }
+    }
+    .important-box {
+        background-color: white;
+        grid-column: 2/5;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 4px;
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        font-size: 25px;
+        padding: 10px;
+        color: orangered;
+    }
+    .second-important-box {
+        background-color: white;
+        grid-column: 2/5;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 4px;
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        font-size: 25px;
+        padding: 10px;
+        color:  olivedrab;
+    }
+    .nav{
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 4px;
+        padding: 10px;
+        .header{
+            padding: 20px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 23px;
+            margin: 10px 0;
+        }
+        ul{
+            margin-left: 60px;
+            list-style-type: "\25BA \0020";
+            
+            li{
+                font-size: 19px;
+                padding-left: 10px;
+                margin-bottom: 10px;
+            }
+        }
+        &:nth-child(3) {
+            grid-row: 2/4;
+          }
+      
+        &:nth-child(9) {
+            grid-row: 5/7;
+          }
+    }
+    
+    .item{
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 4px;
+        .item-content{
+            padding: 15px;
+        }
+        .header{
+            padding-bottom: 10px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        &:nth-child(4),
+        &:nth-child(5),
+        &:nth-child(6) {
+          grid-row: 3/5;
+        }
+    
+        &:nth-child(11),
+        &:nth-child(12),
+        &:nth-child(13){
+          grid-row: 6/8;
+        }
+        .image-item{
+            background-color: gray;
+            height: 150px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+    }
+}
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightskyblue;
+    padding:40px;
+    position: absolute;
+    width: 100%;
+}

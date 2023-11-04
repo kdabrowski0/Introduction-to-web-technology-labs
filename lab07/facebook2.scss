@@ -1,0 +1,408 @@
+
+$colors:lightblue,  lightcoral,  lightsteelblue,lightgreen, lightsalmon, lightslategrey;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+input, button {
+	font-size: inherit;
+	font-family: inherit;
+}
+body, html {
+    
+	height: 100%;
+}
+body {
+  width: 1068px;
+  
+  flex-direction: column;
+  gap: 20px;
+  min-height: 100vh;
+  display: flex;
+  width: 60vw;//strona sie nie bedzie zmniejszac bez tego
+  margin:auto;
+  background-color: rgb(28, 30, 33);
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+ul{
+  list-style: none;
+}
+.header{
+  display: flex;
+  align-items: center;
+  
+  flex-direction: column;
+  .header-content{
+    background-image: url('foggy.jpg');
+    border-radius: 20px;
+    background-size: cover;
+    width: 100%;
+    height: 280px;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+    margin-bottom: 20px;
+    .change-photo{
+      
+      position: absolute;
+      background-color: mediumaquamarine;
+      height: 150px;
+      width: 150px;
+      border-radius: 50%;
+      border: 4px solid rgba(60, 60, 60, 1);
+      top: 150px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: flex-end;
+      .fas{
+        align-self: flex-end;
+        background-color: rgba(255,255,255,0.1);
+        border-radius: 100px;
+        border: 7px solid rgba(255,255,255,0.1);
+      }
+
+    }
+
+  }
+  .name{
+    font-size: 29px;
+    font-weight: bolder;
+    color: white;
+    
+
+  }
+  .btn{
+    color: white;
+    background-color: rgba(255,255,255,0.1);
+    text-decoration: none;
+    border: none;
+    display: flex;
+    padding:10px ;
+    border-radius: 10px;
+    position: absolute;
+    align-self: flex-end;
+    top: 220px;
+    margin-right: 20px;
+    align-items: center;
+    cursor: pointer;
+    &:hover{
+      background-color: rgba(255,255,255,0.4);
+      
+    }
+    .fas{
+      margin-right: 8px;
+      color: white;
+
+    }
+
+  }
+}
+.nav {
+  background-color: #242526;
+  height: 60px;
+  border-radius: 10px;
+  
+  .menu {
+      display: flex;
+      align-items: baseline;
+      .menu-list {
+          display: flex;
+          margin: 10px auto 0 10px;
+          padding: 0;
+          .menu-item {
+              display: inline-block;
+              margin: 0 5px 0 5px;
+              padding: 10px 15px 10px 15px;
+              border-radius: 10px;
+              font-size: 18px;
+              font-weight: 600;
+              
+              a:link,:visited {
+                  color: #b0b3b8;
+                  text-transform: none;
+                  text-decoration: none;
+                 
+              }
+              
+          }
+          .menu-item:hover {
+              background-color: rgba(255,255,255,0.1);
+          }
+      }
+      .buttons {
+          margin: 10px 15px 10px auto;
+          .btn {
+              margin-left: 10px;
+              border: none;
+              padding: 10px 15px 10px 15px;
+              font-size: 16px;
+              background-color: rgba(255,255,255,0.1);
+              color: white;
+              border-radius: 10px;
+              cursor: pointer;
+          }
+          .btn:hover {
+              background-color: rgba(255,255,255,0.3);
+          }
+      }
+  }
+}
+.container{
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 15px;
+  .left{
+  
+    .footer{
+      display: flex;
+      position: sticky;
+      top: 635px;
+      ul{
+        display: flex;
+        li{
+          
+          color: grey;
+        }
+        li:nth-child(1){
+          padding-right: 10px;
+          border-right: 1px solid grey;
+        }
+        li:nth-child(2){
+          padding-left: 10px;
+        }
+      }
+      
+    }
+    .box{
+      
+      
+      background-color: #242526;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      padding: 15px;
+      color: white;
+    }
+    .box:nth-child(1){
+      display: flex;
+      position: sticky;
+      top: 0;
+      
+      
+      flex-direction: column;
+      .row{
+        display: flex;
+        margin-top: 10px;
+        text-align: center;
+        
+        .icon{
+          margin-right: 10px;
+          width: 20px;
+          text-align: center;
+
+        }
+        .fas{
+          color: grey;
+          
+
+        }
+      }
+      .row:last-of-type{
+        
+        .btn{
+          border: none;
+          background-color: rgba(255,255,255,0.1);
+          color: white;
+          padding: 10px;
+          text-align: center;
+          border-radius: 10px;
+          width: 100%;
+          cursor: pointer;
+          &:hover{
+            background-color:rgba(255,255,255,0.3);
+          
+          }
+
+        }
+        
+
+      }
+
+    }
+    .box:nth-child(2){
+      position: sticky;
+      top: 240px;
+      h2{
+        margin-bottom: 10px;
+      }
+      .photos{
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: repeat(3, 1fr);
+        @for $i from 1 through length($colors) {
+          .photo:nth-child(#{$i}) {
+              
+                  background-color: nth($colors, $i);
+              
+          }
+        }
+        .photo{
+          height: 150px;
+          border-radius: 10px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          &:hover{
+            filter: brightness(120%);
+            .content{
+              visibility: visible;
+              color: black;
+            }
+          }
+          .content{
+            visibility: hidden;
+          }
+        }
+      }
+    }
+
+  }
+  .right{
+    
+    display: flex;
+    flex-direction: column;
+    
+    .box:nth-child(1){
+      display: flex;
+      flex-direction: row;
+      
+      flex-wrap: wrap;
+      
+      .logo{
+        
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        margin: 15px 0 10px 15px;
+        background-color:mediumaquamarine;
+
+      }
+      input{
+        
+        display: flex;
+        
+        background-color:#282828 ;
+        border: none;
+        
+        
+        
+      }
+      .options{
+        margin: 0 10px 0 10px;
+        display: flex;
+        
+        justify-content: space-around;
+        padding: 10px 0 10px 0;
+        border-top: 1px solid #3a3b3c;
+        width: 100%;
+      }
+    }
+    .box{
+      background-color:#282828 ;
+      margin-bottom: 10px;
+      padding:10px 0px 10px 0px;
+      border-radius:10px ;
+      color: white;
+      h3,p,a{
+        padding: 10px;
+        text-decoration: none;
+        color: white;
+      }
+      .photos{
+        display: flex;
+        flex-wrap: wrap;
+        
+        gap: 3px;
+        
+        }
+        .photo{
+          height: 200px;
+          background-color: gray;
+          flex-wrap: wrap;
+          flex-grow: 1;
+          flex-basis: 33%;
+          &:hover{
+            filter: brightness(120%);
+        }
+      }
+    }
+    .box:last-of-type{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+  }
+}
+
+.message-items{
+  visibility: hidden;
+  .message-other{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    .fab{
+      
+      color: white;
+      background-color: #282828;
+      border-radius: 50%;
+      font-size: 30px;
+    }
+
+
+  }
+  #message-anna{
+    visibility: hidden;
+    padding: 20px;
+    right: 10px;
+    bottom: 80px;
+    position: fixed;
+    font-size: 30px;
+    background-color: salmon;
+    border-radius:50% ;
+
+  }
+}
+#message-box{
+  visibility: hidden;
+}
+
+// $colors: yellow green red blue;
+// $id: 1;
+
+// // bierzemy kazdy kolor z zadeklarowanej listy
+// @each $color in $colors {
+//     .nazwa_klasy-#{$id} {
+//         // odwołujemy się do klasy box-size, nie musimy powielać kodu
+//         @extend .nazwa_klasy;
+//         background-color: $color;
+//     }
+//     $id: $id + 1;
+// }
+// @for $i from 1 to 8 {
+//   .color-#{$i} {
+//       // odwołujemy się do klasy box-size, nie musimy powielać kodu
+//       @extend .box-size;
+//       background-color: #111 * $i;
+//       @if ($i % 2 == 1) {
+//           border: 5px solid black;
+//       }
+//       @if ($i % 2 == 0) {
+//           border: 5px dotted black;
+//       }
+//   }
+// }
+

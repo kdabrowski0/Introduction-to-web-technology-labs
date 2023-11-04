@@ -1,0 +1,27 @@
+.content{
+    display: grid;
+    grid-template-columns:repeat(5, 1fr);
+    margin-bottom: 200px;
+    margin-right: 200px;
+    
+    width: 600px;
+    height: 600px;
+    border: 1px solid black;
+    
+}
+.color-plane{
+    text-align: center;
+    border: 1px solid black;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    text-shadow: 2px 2px 1px rgba(0,0,0,0.15) ;
+    &:nth-child(odd){
+        background-color: orange;
+    
+    }
+    &:nth-child(even){
+        background-color: gray;
+    }
+}
+
